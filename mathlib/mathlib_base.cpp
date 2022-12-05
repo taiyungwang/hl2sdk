@@ -4057,10 +4057,10 @@ void CalcTriangleTangentSpace( const Vector &p0, const Vector &p1, const Vector 
 //-----------------------------------------------------------------------------
 void RGBtoHSV( const Vector &rgb, Vector &hsv )
 {
-	float flMax = max( rgb.x, rgb.y );
-	flMax = max( flMax, rgb.z );
-	float flMin = min( rgb.x, rgb.y );
-	flMin = min( flMin, rgb.z );
+	float flMax = V_max( rgb.x, rgb.y );
+	flMax = V_max( flMax, rgb.z );
+	float flMin =V_min( rgb.x, rgb.y );
+	flMin =V_min( flMin, rgb.z );
 
 	// hsv.z is the value
 	hsv.z = flMax;
